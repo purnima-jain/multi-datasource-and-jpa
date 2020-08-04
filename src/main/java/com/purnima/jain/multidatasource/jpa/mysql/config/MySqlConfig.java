@@ -45,7 +45,7 @@ public class MySqlConfig {
 
 	@Primary // Arbitrarily making this as Primary
 	@Bean(name = "mySqlTransactionManager")
-	public PlatformTransactionManager db2TransactionManager(@Qualifier("mySqlEntityManagerFactory") EntityManagerFactory mySqlEntityManagerFactory) {
+	public PlatformTransactionManager mySqlTransactionManager(@Qualifier("mySqlEntityManagerFactory") EntityManagerFactory mySqlEntityManagerFactory) {
 		return new JpaTransactionManager(mySqlEntityManagerFactory);
 	}
 

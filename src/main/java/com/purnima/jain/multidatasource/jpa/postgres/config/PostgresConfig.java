@@ -41,7 +41,7 @@ public class PostgresConfig {
 	}
 
 	@Bean(name = "postgresTransactionManager")
-	public PlatformTransactionManager db2TransactionManager(@Qualifier("postgresEntityManagerFactory") EntityManagerFactory postgresEntityManagerFactory) {
+	public PlatformTransactionManager postgresTransactionManager(@Qualifier("postgresEntityManagerFactory") EntityManagerFactory postgresEntityManagerFactory) {
 		return new JpaTransactionManager(postgresEntityManagerFactory);
 	}
 
