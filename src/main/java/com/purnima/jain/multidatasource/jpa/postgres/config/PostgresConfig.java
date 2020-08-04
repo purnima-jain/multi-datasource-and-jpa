@@ -33,7 +33,7 @@ public class PostgresConfig {
 	}
 
 	@Bean(name = "postgresEntityManagerFactory")
-	public LocalContainerEntityManagerFactoryBean mySqlEntityManagerFactory(EntityManagerFactoryBuilder builder, @Qualifier("postgresDataSource") DataSource dataSource) {
+	public LocalContainerEntityManagerFactoryBean postgresEntityManagerFactory(EntityManagerFactoryBuilder builder, @Qualifier("postgresDataSource") DataSource dataSource) {
 		return builder
 				.dataSource(dataSource)
 				.packages("com.purnima.jain.multidatasource.jpa.postgres.entity")
